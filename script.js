@@ -25,15 +25,20 @@ function updateTime() {
 function start() {
     if (isRunning === false) {
         sound.play();
+        document.querySelector("#stop").style = "display:flex";
+        document.querySelector("#reset").style = "display:flex";
         interval = setInterval(updateTime, 1000);
         isRunning = true;
     }
+
 }
 function stop() {
     sound.play();
 
     clearInterval(interval);
     isRunning = false;
+    document.querySelector("#stop").style.display = "none";
+    document.querySelector("#reset").style.display = "none";
 }
 function reset() {
     sound.play();
