@@ -1,9 +1,15 @@
+:root {
+    --white: #f8f5f5;
+    --black: rgb(32, 31, 31);
+    --blue: #7abeec;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(32, 31, 31);
+    background-color: var(--black);
     text-align: center;
-    color: white;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
@@ -14,18 +20,27 @@ body {
     justify-content: center;
     align-self: center;
     border-radius: 100%;
-    border: 6px solid white;
-    height: 150px;
-    width: 150px;
+    border: 6px solid;
+    height: 160px;
+    width: 160px;
     padding-top: 0;
     margin: 200px 0 0;
+}
+
+@keyframes box {
+    from {
+        border-color: var(--white);
+    }
+    to {
+        border-color: var(--black);
+    }
 }
 
 .me, p {
     display: flex;
     text-align: center;
     align-items: center;
-    color: #7abeec;
+    color: var(--blue);
     font-size: 30px;
 }
 
@@ -35,8 +50,8 @@ body {
 }
 
 #start {
-    background-color: #7abeec;
-    color: rgb(32, 31, 31);
+    background-color: var(--blue);
+    color: var(--black);
     font-size: 30px;
     margin: 40px 20px;
     border-radius: 50px;
@@ -52,8 +67,8 @@ body {
 }
 
 #stop {
-    background-color: rgb(32, 31, 31);
-    color: #7abeec;
+    background-color: var(--black);
+    color: var(--blue);
     font-size: 30px;
     text-align: center;
     margin: 40px 20px;
@@ -66,8 +81,8 @@ body {
 }
 
 #reset {
-    background-color: rgb(32, 31, 31);
-    color: #7abeec;
+    background-color: var(--black);
+    color: var(--blue);
     font-size: 30px;
     text-align: center;
     margin: 40px 20px;

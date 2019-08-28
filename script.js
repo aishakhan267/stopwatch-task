@@ -18,9 +18,29 @@ function updateTime() {
         seconds++;
     }
 
-    document.querySelector("#hours").innerHTML = hours;
-    document.querySelector("#minutes").innerHTML = minutes;
-    document.querySelector("#seconds").innerHTML = seconds;
+
+
+
+    if (seconds < 10) {
+        document.querySelector("#seconds").innerHTML = `0${seconds}`;
+    } else {
+        document.querySelector("#seconds").innerHTML = seconds;
+    }
+
+
+    if (minutes < 10) {
+        document.querySelector("#minutes").innerHTML = `0${minutes}`;
+    } else {
+        document.querySelector("#minutes").innerHTML = minutes;
+    }
+
+
+    if (hours < 10) {
+        document.querySelector("#hours").innerHTML = `0${hours}`;
+    } else {
+        document.querySelector("#hours").innerHTML = hours;
+    }
+
 }
 function start() {
     if (isRunning === false) {
@@ -28,12 +48,14 @@ function start() {
         interval = setInterval(updateTime, 1000);
         isRunning = true;
     }
+    document.querySelector("#main").style = "animation: box 1s linear infinite";
 
 }
 function stop() {
     sound.play();
     clearInterval(interval);
     isRunning = false;
+    document.querySelector("#main").style = "animation: none";
 
 }
 function reset() {
@@ -43,7 +65,26 @@ function reset() {
     minutes = 0;
     hours = 0;
     stop();
-    document.querySelector("#hours").innerHTML = hours;
-    document.querySelector("#minutes").innerHTML = minutes;
-    document.querySelector("#seconds").innerHTML = seconds;
+
+    if (seconds < 10) {
+        document.querySelector("#seconds").innerHTML = `0${seconds}`;
+    } else {
+        document.querySelector("#seconds").innerHTML = seconds;
+    }
+
+
+    if (minutes < 10) {
+        document.querySelector("#minutes").innerHTML = `0${minutes}`;
+    } else {
+        document.querySelector("#minutes").innerHTML = minutes;
+    }
+
+
+    if (hours < 10) {
+        document.querySelector("#hours").innerHTML = `0${hours}`;
+    } else {
+        document.querySelector("#hours").innerHTML = hours;
+    }
+
+    document.querySelector("#main").style = "animation: none";
 } 
